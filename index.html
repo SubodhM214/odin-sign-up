@@ -9,9 +9,15 @@
   <body>
     <div class="container">
       <div class="side-image">
+        <div class="odin-logo">
+          <img src="images/odin-lined.png" class="odin-logo-image" alt="odin-logo">
+          <p class="odin-logo-text">
+                Odin logo
+          </p>
+        </div>
         <div class="background-image"></div>
       </div>
-      <p>Photo by <a href="unsplash.com">unsplash.com</a></p>
+      <p class="photo-link">Photos on <a href="https://unsplash.com/">Unsplash</a></p>
     </div>
     <div class="main-container">
       <div class="description">
@@ -30,14 +36,16 @@
 
               <label for="first-name"> FIRST NAME 
               </label>
-              <input type="text" id="first-name" name="first-name" required />
+              <input type="text" id="first-name" name="first-name" required pattern="[A-Za-z']+"/>
+              <p class="error">*Name must contain only alphabets</p>
             </div>
             <div>
 
               <label for="last-name"> LAST NAME 
                 
               </label>
-              <input type="text" id="last-name" name="last-name" required />
+              <input type="text" id="last-name" name="last-name" required pattern="[A-Za-z']+" />
+              <p class="error">*Name must contain only alphabets</p>
             </div>
           </div>
           <div class="input-box">
@@ -45,13 +53,15 @@
                 <label for="email"> EMAIL
                 </label>
                 <input type="email" id="email" name="email" required />
+                <p class="error">*Invalid email credentials</p>
             </div>
             <div>
 
               <label for="phone"> PHONE NUMBER 
                 
               </label>
-                <input type="tel" id="phone" name="phone" required />
+                <input type="tel" id="phone" name="phone" min="10" max="10" required />
+                <p class="error">*Phone number must contain only digits</p>
             </div>
           </div>
           <div class="input-box">
@@ -73,15 +83,17 @@
                 name="confirm-password"
                 required
                 />
+                <p class="error">*Password do not match</p>
             </div>         
           </div>
         </div>
           </div>
         <div class="submit-container">
-          <button type="submit">Create Account</button>
-          <p>Already have an account? <a href="#">Log in</a></p>
+          <button type="submit" class="submit">Create Account</button>
+          <p>Already have an account? <a class="login" href="#">Log in</a></p>
         </div>
       </div>
     </div>
+   
   </body>
 </html>

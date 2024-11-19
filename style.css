@@ -3,21 +3,59 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+@font-face {
+  font-family: "Norse";
+  src: url("font/Norse-Bold.otf") format("opentype");
+}
+
+body {
+  position: relative;
 }
 label {
   display: block;
 }
 
-.container {
-  /* display: flex; */
+.odin-logo {
+  position: absolute;
+  z-index: +1;
+  width: 40vw;
+  background-color: #000;
+  opacity: 0.3;
+  font-size: 40px;
+  height: 80px;
+  top: 20%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.odin-logo-image {
+  height: 60px;
+  width: auto;
+}
+.odin-logo-text {
+  font-weight: 800;
+  font-family: "Norse";
+}
+
+.photo-link {
+  position: absolute;
+  z-index: +1;
+  bottom: 0;
+  left: calc(30vw / 2);
+  color: #fff;
+  padding-bottom: 12px;
+}
+.photo-link a {
+  color: #fff;
 }
 .background-image {
   background-image: url("/images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-
-  height: 100vh;
+  height: 120vh;
 }
 .main-container {
   position: absolute;
@@ -26,26 +64,83 @@ label {
   width: 60vw;
   z-index: +1;
   background-color: #fff;
-  height: 100vh;
-  /* padding: 36px; */
+  height: 120vh;
 }
 .description {
   background-color: rgb(169, 169, 192);
   padding: 36px;
-  padding-top: 108px;
+  padding-top: 150px;
+  font-size: 24px;
+}
+h3 {
+  font-weight: 500;
 }
 .desc-para {
   padding-top: 24px;
+  font-weight: 500;
+  padding-bottom: 36px;
 }
 
 .form-container {
   padding: 36px;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.3);
 }
 .form-container-input {
   display: flex;
   flex-direction: column;
+  letter-spacing: 2px;
 }
 .input-box {
   display: flex;
   gap: 36px;
+  padding: 8px;
+}
+input {
+  width: 300px;
+  outline: none;
+  height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:valid {
+  border-color: green;
+}
+.error {
+  display: none;
+  font-size: 12px;
+}
+input:invalid:focus + .error {
+  display: block;
+  color: red;
+  border-color: red;
+}
+
+input:focus {
+  border-color: blue;
+  box-shadow: 0 0 2px 1px rgba(0, 123, 255, 0.5);
+}
+
+.submit-container {
+  padding: 36px;
+}
+
+.submit {
+  background-color: #596d48;
+  color: #fff;
+  border: none;
+  padding: 12px 60px;
+  border-radius: 6px;
+  font-size: 24px;
+}
+.submit:hover {
+  cursor: pointer;
+}
+.submit-container p {
+  margin-top: 24px;
+  font-weight: 600;
+}
+.submit-container a {
+  color: #596d48;
+  text-decoration: none;
 }
